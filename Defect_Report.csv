@@ -1,0 +1,126 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Custom field (Actual end),Custom field (Actual start),Custom field (Begin Date),Custom field (Begin Date),Custom field (Change reason),Custom field (Change risk),Custom field (Change type),Custom field (Development),Custom field (End Date),Custom field (End Date),Custom field (Epic Color),Custom field (Epic Name),Custom field (Epic Status),Custom field (Goals),Custom field (Impact),Custom field (Issue color),Custom field (Locked forms),Custom field (Open forms),Custom field (Project overview key),Custom field (Project overview status),Custom field (Rank),Custom field (Request Type),Custom field (Revision),Custom field (Revision),Custom field (Sentiment),Custom field (Start date),Custom field (Story Points),Custom field (Story point estimate),Custom field (Submitted forms),Custom field (Target end),Custom field (Target start),Custom field (Team),Custom field (Total forms),Custom field (Vulnerability),Custom field ([CHART] Date of First Response),Custom field ([CHART] Time in Status),Status Category,Status Category Changed
+Verify correct setter/getter mapping for address.,TMS-136,10168,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:51 PM,11/Dec/24 9:51 PM,11/Dec/24 9:56 PM,,,0,"*Objective:* Verify correct setter/getter mapping for address.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setAddr(""123 Main Street"")}}.
+# Call {{getAddr()}}.
+*Expected Results:*
+No confusion due to naming.
+*Actual Results:*
+Naming inconsistency causes readability issues.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i00113:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:51 PM
+Verify setSeats rejects negative values.,TMS-135,10167,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:50 PM,11/Dec/24 9:50 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID: TMS-135
+
+*Objective:* Verify {{setSeats}} rejects negative values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setSeats(-10)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+Throws an exception or retains {{0}} as default.
+*Actual Results:*
+Accepted {{-10}} without validation.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0010v:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:50 PM
+ Verify serialization/deserialization retains all property values.,TMS-134,10166,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:49 PM,11/Dec/24 9:49 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID:TMS-134
+
+*Objective:* Verify serialization/deserialization retains all property values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Set all properties of {{TrainBean}}.
+# Serialize and deserialize the object.
+# Compare pre- and post-serialization values.
+*Expected Results:*
+All properties remain consistent.
+*Actual Results:*
+Loss of values during deserialization.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0010n:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:49 PM
+Verify handling of invalid phone numbers in setPhNo.,TMS-133,10165,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:48 PM,11/Dec/24 9:48 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID: TMS-133
+
+*Objective:* Verify handling of invalid phone numbers in {{setPhNo}}.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setPhNo(-1234567890L)}}.
+# Call {{getPhNo()}}.
+*Expected Results:*
+Throws an exception or rejects the invalid phone number.
+*Actual Results:*
+Accepted the invalid value, {{getPhNo()}} returned {{-1234567890}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0010f:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:48 PM
+Verify behavior of setTransId when a null value is provided.,TMS-132,10164,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:47 PM,11/Dec/24 9:47 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID: HB-201
+
+*Objective:* Verify behavior of {{setTransId}} when a {{null}} value is provided.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setTransId(null)}} on a {{HistoryBean}} object.
+# Call {{getTransId()}}.
+*Expected Results:*
+{{getTransId()}} returns {{null}} or throws an appropriate exception indicating invalid input.
+*Actual Results:*
+No exception is thrown; {{getTransId()}} returned {{null}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i00107:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:47 PM
+Verify serialization and deserialization of HistoryBean when BookingDetails is non-serializable.,TMS-131,10163,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 2:07 PM,11/Dec/24 2:07 PM,11/Dec/24 9:51 PM,,,0,"h4. Test Case ID: TMS-131
+
+*Objective:* Verify serialization and deserialization of {{HistoryBean}} when {{BookingDetails}} is non-serializable.
+*Pre-conditions:* {{BookingDetails}} class does not implement {{Serializable}}.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Set properties for both {{HistoryBean}} and {{BookingDetails}}.
+# Serialize the object to a file.
+# Deserialize the object from the file.
+*Expected Results:*
+Serialization should succeed, and all properties should be restored.
+*Actual Results (Dry Run):*
+Serialization fails with {{java.io.NotSerializableException}} for {{BookingDetails}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 2:07 PM
+ Verify that setPWord() does not accept null as a value.,TMS-130,10162,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:52 PM,11/Dec/24 9:48 PM,11/Dec/24 9:48 PM,,,0,"h4. Test Case ID: TMS-132
+
+*Objective:* Verify that {{setPWord()}} does not accept {{null}} as a value.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setPWord(null)}}.
+# Call {{getPWord()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the null value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The value {{null}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:52 PM
+Verify that setFName() does not accept null as a value,TMS-129,10161,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:51 PM,11/Dec/24 1:51 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID: UBS-129
+
+*Objective:* Verify that {{setFName()}} does not accept {{null}} as a value.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setFName(null)}}.
+# Call {{getFName()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the null value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The value {{null}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:51 PM
+Verify that setFare() does not accept negative values.,TMS-128,10160,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:50 PM,11/Dec/24 1:50 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID: TBS-128
+
+*Objective:* Verify that {{setFare()}} does not accept negative values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setFare(-50.0)}}.
+# Call {{getFare()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the invalid value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The invalid value {{-50.0}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:50 PM
+Verify that setSeats() does not accept negative values.,TMS-127,10159,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:48 PM,11/Dec/24 1:48 PM,11/Dec/24 9:56 PM,,,0,"h4. Test Case ID: TBS-127
+
+*Objective:* Verify that {{setSeats()}} does not accept negative values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setSeats(-10)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the invalid value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The invalid value {{-10}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000z3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:48 PM

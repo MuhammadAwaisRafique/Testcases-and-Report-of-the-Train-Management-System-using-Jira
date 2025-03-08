@@ -1,0 +1,1758 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Custom field (Actual end),Custom field (Actual start),Custom field (Begin Date),Custom field (Begin Date),Custom field (Change reason),Custom field (Change risk),Custom field (Change type),Custom field (Development),Custom field (End Date),Custom field (End Date),Custom field (Epic Color),Custom field (Epic Name),Custom field (Epic Status),Custom field (Goals),Custom field (Impact),Custom field (Issue color),Custom field (Locked forms),Custom field (Open forms),Custom field (Project overview key),Custom field (Project overview status),Custom field (Rank),Custom field (Request Type),Custom field (Revision),Custom field (Revision),Custom field (Sentiment),Custom field (Start date),Custom field (Story Points),Custom field (Story point estimate),Custom field (Submitted forms),Custom field (Target end),Custom field (Target start),Custom field (Team),Custom field (Total forms),Custom field (Vulnerability),Custom field ([CHART] Date of First Response),Custom field ([CHART] Time in Status),Status Category,Status Category Changed
+Verify correct setter/getter mapping for address.,TMS-136,10168,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:51 PM,11/Dec/24 9:51 PM,11/Dec/24 9:58 PM,,,0,"*Objective:* Verify correct setter/getter mapping for address.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setAddr(""123 Main Street"")}}.
+# Call {{getAddr()}}.
+*Expected Results:*
+No confusion due to naming.
+*Actual Results:*
+Naming inconsistency causes readability issues.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i00113:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:51 PM
+Verify setSeats rejects negative values.,TMS-135,10167,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:50 PM,11/Dec/24 9:50 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-135
+
+*Objective:* Verify {{setSeats}} rejects negative values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setSeats(-10)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+Throws an exception or retains {{0}} as default.
+*Actual Results:*
+Accepted {{-10}} without validation.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0010v:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:50 PM
+ Verify serialization/deserialization retains all property values.,TMS-134,10166,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:49 PM,11/Dec/24 9:49 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID:TMS-134
+
+*Objective:* Verify serialization/deserialization retains all property values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Set all properties of {{TrainBean}}.
+# Serialize and deserialize the object.
+# Compare pre- and post-serialization values.
+*Expected Results:*
+All properties remain consistent.
+*Actual Results:*
+Loss of values during deserialization.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0010n:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:49 PM
+Verify handling of invalid phone numbers in setPhNo.,TMS-133,10165,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:48 PM,11/Dec/24 9:48 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-133
+
+*Objective:* Verify handling of invalid phone numbers in {{setPhNo}}.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setPhNo(-1234567890L)}}.
+# Call {{getPhNo()}}.
+*Expected Results:*
+Throws an exception or rejects the invalid phone number.
+*Actual Results:*
+Accepted the invalid value, {{getPhNo()}} returned {{-1234567890}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0010f:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:48 PM
+Verify behavior of setTransId when a null value is provided.,TMS-132,10164,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 9:47 PM,11/Dec/24 9:47 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: HB-201
+
+*Objective:* Verify behavior of {{setTransId}} when a {{null}} value is provided.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Call {{setTransId(null)}} on a {{HistoryBean}} object.
+# Call {{getTransId()}}.
+*Expected Results:*
+{{getTransId()}} returns {{null}} or throws an appropriate exception indicating invalid input.
+*Actual Results:*
+No exception is thrown; {{getTransId()}} returned {{null}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i00107:,,,,,,,,,,,,,,,,To Do,11/Dec/24 9:47 PM
+Verify serialization and deserialization of HistoryBean when BookingDetails is non-serializable.,TMS-131,10163,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 2:07 PM,11/Dec/24 2:07 PM,11/Dec/24 9:51 PM,,,0,"h4. Test Case ID: TMS-131
+
+*Objective:* Verify serialization and deserialization of {{HistoryBean}} when {{BookingDetails}} is non-serializable.
+*Pre-conditions:* {{BookingDetails}} class does not implement {{Serializable}}.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Set properties for both {{HistoryBean}} and {{BookingDetails}}.
+# Serialize the object to a file.
+# Deserialize the object from the file.
+*Expected Results:*
+Serialization should succeed, and all properties should be restored.
+*Actual Results (Dry Run):*
+Serialization fails with {{java.io.NotSerializableException}} for {{BookingDetails}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 2:07 PM
+ Verify that setPWord() does not accept null as a value.,TMS-130,10162,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:52 PM,11/Dec/24 9:48 PM,11/Dec/24 9:48 PM,,,0,"h4. Test Case ID: TMS-132
+
+*Objective:* Verify that {{setPWord()}} does not accept {{null}} as a value.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setPWord(null)}}.
+# Call {{getPWord()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the null value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The value {{null}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:52 PM
+Verify that setFName() does not accept null as a value,TMS-129,10161,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:51 PM,11/Dec/24 1:51 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-129
+
+*Objective:* Verify that {{setFName()}} does not accept {{null}} as a value.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setFName(null)}}.
+# Call {{getFName()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the null value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The value {{null}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:51 PM
+Verify that setFare() does not accept negative values.,TMS-128,10160,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:50 PM,11/Dec/24 1:50 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-128
+
+*Objective:* Verify that {{setFare()}} does not accept negative values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setFare(-50.0)}}.
+# Call {{getFare()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the invalid value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The invalid value {{-50.0}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000zb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:50 PM
+Verify that setSeats() does not accept negative values.,TMS-127,10159,Bug,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:48 PM,11/Dec/24 1:48 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-127
+
+*Objective:* Verify that {{setSeats()}} does not accept negative values.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setSeats(-10)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+An exception should be thrown, or the method should ignore the invalid value and retain the default or previous value.
+*Actual Results (Dry Run):*
+The invalid value {{-10}} is accepted and stored.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000z3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:48 PM
+Verify default values for properties.,TMS-126,10158,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:35 PM,11/Dec/24 1:35 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-126
+
+*Objective:* Verify default values for properties.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call all getter methods without setting any values.
+*Expected Results:*
+Default values are:
+#* {{null}} for string properties
+#* {{0}} for numeric properties ({{tr_no}}, {{seats}}, {{fare}})
+#*Actual Results:*
+Default values returned as expected.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000yv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:35 PM
+Verify serialization and deserialization for TrainBean.,TMS-125,10157,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:32 PM,11/Dec/24 1:32 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-125
+
+*Objective:* Verify serialization and deserialization for {{TrainBean}}.
+*Pre-conditions:* {{TrainBean}} object is instantiated, and serialization mechanism is available.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}} and set all properties.
+# Serialize the object to a file.
+# Deserialize the object from the file.
+# Verify all properties.
+*Expected Results:*
+The deserialized object retains all values set before serialization.
+*Actual Results:*
+The deserialized object retained all values.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000yn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:32 PM
+Verify behavior when setting invalid data for numeric properties.,TMS-124,10156,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:31 PM,11/Dec/24 1:31 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-124
+
+*Objective:* Verify behavior when setting invalid data for numeric properties.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call setters with invalid values:
+#* {{setSeats(-10)}}
+#* {{setFare(-50.0)}}
+# Call corresponding getters.
+*Expected Results:*
+Either invalid values are stored, or an exception is thrown based on business rules.
+*Actual Results:*
+Invalid values were stored without exception.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000yf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:31 PM
+Verify behavior when setting null values for string properties.,TMS-123,10155,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:30 PM,11/Dec/24 1:30 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-123
+
+*Objective:* Verify behavior when setting {{null}} values for string properties.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call setters with {{null}} for all string properties:
+#* {{setTr_name(null)}}
+#* {{setFrom_stn(null)}}
+#* {{setTo_stn(null)}}
+# Call corresponding getters.
+*Expected Results:*
+All getters return {{null}}.
+*Actual Results:*
+All getters returned {{null}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000y7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:30 PM
+Verify that setFare and getFare correctly set and retrieve the fare amount.,TMS-122,10154,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Highest,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:29 PM,11/Dec/24 1:29 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-122
+
+*Objective:* Verify that {{setFare}} and {{getFare}} correctly set and retrieve the fare amount.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setFare(250.75)}}.
+# Call {{getFare()}}.
+*Expected Results:*
+{{getFare()}} returns {{250.75}}.
+*Actual Results:*
+{{getFare()}} returned {{250.75}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000xz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:29 PM
+Verify that setSeats and getSeats correctly set and retrieve the number of seats.,TMS-121,10153,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Lowest,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:28 PM,11/Dec/24 1:28 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-121
+
+*Objective:* Verify that {{setSeats}} and {{getSeats}} correctly set and retrieve the number of seats.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setSeats(100)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+{{getSeats()}} returns {{100}}.
+*Actual Results:*
+{{getSeats()}} returned {{100}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000xr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:28 PM
+Verify that setTo_stn and getTo_stn correctly set and retrieve the destination station.,TMS-120,10152,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:27 PM,11/Dec/24 1:27 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-120
+
+*Objective:* Verify that {{setTo_stn}} and {{getTo_stn}} correctly set and retrieve the destination station.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setTo_stn(""Station B"")}}.
+# Call {{getTo_stn()}}.
+*Expected Results:*
+{{getTo_stn()}} returns {{""Station B""}}.
+*Actual Results:*
+{{getTo_stn()}} returned {{""Station B""}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000xj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:27 PM
+Verify that setFrom_stn and getFrom_stn correctly set and retrieve the departure station.,TMS-119,10151,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:27 PM,11/Dec/24 1:27 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-119
+
+*Objective:* Verify that {{setFrom_stn}} and {{getFrom_stn}} correctly set and retrieve the departure station.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setFrom_stn(""Station A"")}}.
+# Call {{getFrom_stn()}}.
+*Expected Results:*
+{{getFrom_stn()}} returns {{""Station A""}}.
+*Actual Results:*
+{{getFrom_stn()}} returned {{""Station A""}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000xb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:27 PM
+Verify that setTr_name and getTr_name correctly set and retrieve the train name.,TMS-118,10150,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:26 PM,11/Dec/24 1:26 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-118
+
+*Objective:* Verify that {{setTr_name}} and {{getTr_name}} correctly set and retrieve the train name.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setTr_name(""Express"")}}.
+# Call {{getTr_name()}}.
+*Expected Results:*
+{{getTr_name()}} returns {{""Express""}}.
+*Actual Results:*
+{{getTr_name()}} returned {{""Express""}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000x3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:26 PM
+Verify that setTr_no and getTr_no correctly set and retrieve the train number.,TMS-117,10149,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Highest,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:25 PM,11/Dec/24 1:25 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TBS-117
+
+*Objective:* Verify that {{setTr_no}} and {{getTr_no}} correctly set and retrieve the train number.
+*Pre-conditions:* {{TrainBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{TrainBean}}.
+# Call {{setTr_no(12345L)}}.
+# Call {{getTr_no()}}.
+*Expected Results:*
+{{getTr_no()}} returns {{12345L}}.
+*Actual Results:*
+{{getTr_no()}} returned {{12345L}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000wv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:25 PM
+Verify default values for properties.,TMS-116,10148,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:19 PM,11/Dec/24 1:19 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-111
+
+*Objective:* Verify default values for properties.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call all getter methods without setting any values.
+*Expected Results:*
+Default values are:
+#* {{null}} for all string properties
+#* {{0}} for {{phNo}}
+#*Actual Results:*
+Default values returned as expected.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000wn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:19 PM
+Verify serialization and deserialization for UserBean.,TMS-115,10147,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:17 PM,11/Dec/24 1:17 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-115
+
+*Objective:* Verify serialization and deserialization for {{UserBean}}.
+*Pre-conditions:* {{UserBean}} object is instantiated, and serialization mechanism is available.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}} and set all properties.
+# Serialize the object to a file.
+# Deserialize the object from the file.
+# Verify all properties.
+*Expected Results:*
+The deserialized object retains all values set before serialization.
+*Actual Results:*
+The deserialized object retained all values.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000wf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:17 PM
+Verify behavior when setting invalid data for phNo.,TMS-114,10146,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:17 PM,11/Dec/24 1:17 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-109
+
+*Objective:* Verify behavior when setting invalid data for {{phNo}}.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setPhNo(-1234567890L)}}.
+# Call {{getPhNo()}}.
+*Expected Results:*
+Either the negative phone number is stored, or an exception is thrown based on business rules.
+*Actual Results:*
+Negative phone number was stored without exception.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000w7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:17 PM
+Verify behavior when setting an empty string for string properties.,TMS-113,10145,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:16 PM,11/Dec/24 1:16 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-113
+
+*Objective:* Verify behavior when setting an empty string for string properties.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call setters with an empty string for all string properties:
+#* {{setFName("""")}}
+#* {{setLName("""")}}
+#* {{setPWord("""")}}
+#* {{setAddr("""")}}
+#* {{setMailId("""")}}
+# Call corresponding getters.
+*Expected Results:*
+All getters return an empty string {{""""}}.
+*Actual Results:*
+All getters returned an empty string {{""""}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000vz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:16 PM
+Verify behavior when setting null values for string properties.,TMS-112,10144,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:16 PM,11/Dec/24 1:16 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-112
+
+*Objective:* Verify behavior when setting {{null}} values for string properties.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call setters with {{null}} for all string properties:
+#* {{setFName(null)}}
+#* {{setLName(null)}}
+#* {{setPWord(null)}}
+#* {{setAddr(null)}}
+#* {{setMailId(null)}}
+# Call corresponding getters.
+*Expected Results:*
+All getters return {{null}}.
+*Actual Results:*
+All getters returned {{null}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000vr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:16 PM
+Verify that setPhNo and getPhNo correctly set and retrieve the phone number.,TMS-111,10143,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:15 PM,11/Dec/24 1:15 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-111
+
+*Objective:* Verify that {{setPhNo}} and {{getPhNo}} correctly set and retrieve the phone number.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setPhNo(9876543210L)}}.
+# Call {{getPhNo()}}.
+*Expected Results:*
+{{getPhNo()}} returns {{9876543210L}}.
+*Actual Results:*
+{{getPhNo()}} returned {{9876543210L}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000vj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:15 PM
+Verify that setMailId and getMailId correctly set and retrieve the email ID.,TMS-110,10142,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 1:14 PM,11/Dec/24 1:14 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-110
+
+*Objective:* Verify that {{setMailId}} and {{getMailId}} correctly set and retrieve the email ID.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setMailId(""test@example.com"")}}.
+# Call {{getMailId()}}.
+*Expected Results:*
+{{getMailId()}} returns {{""test@example.com""}}.
+*Actual Results:*
+{{getMailId()}} returned {{""test@example.com""}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000vb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:14 PM
+Verify that setPWord and getPWord correctly set and retrieve the password.,TMS-109,10141,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:08 PM,11/Dec/24 1:08 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-109
+
+*Objective:* Verify that {{setPWord}} and {{getPWord}} correctly set and retrieve the password.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setPWord(""securePass123"")}}.
+# Call {{getPWord()}}.
+*Expected Results:*
+{{getPWord()}} returns {{""securePass123""}}.
+*Actual Results:*
+{{getPWord()}} returned {{""securePass123""}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000v3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:08 PM
+Verify that setLName and getLName correctly set and retrieve the last name.,TMS-108,10140,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:07 PM,11/Dec/24 1:07 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-108
+
+*Objective:* Verify that {{setLName}} and {{getLName}} correctly set and retrieve the last name.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setLName(""Doe"")}}.
+# Call {{getLName()}}.
+*Expected Results:*
+{{getLName()}} returns {{""Doe""}}.
+*Actual Results:*
+{{getLName()}} returned {{""Doe""}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000uv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:07 PM
+Verify that setFName and getFName correctly set and retrieve the first name.,TMS-107,10139,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:07 PM,11/Dec/24 1:07 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: UBS-107
+
+*Objective:* Verify that {{setFName}} and {{getFName}} correctly set and retrieve the first name.
+*Pre-conditions:* {{UserBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{UserBean}}.
+# Call {{setFName(""John"")}}.
+# Call {{getFName()}}.
+*Expected Results:*
+{{getFName()}} returns {{""John""}}.
+*Actual Results:*
+{{getFName()}} returned {{""John""}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000un:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:07 PM
+Verify behavior when default values are retrieved without setting any properties.,TMS-106,10138,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:02 PM,11/Dec/24 1:02 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-106
+
+*Objective:* Verify behavior when default values are retrieved without setting any properties.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call all getter methods without setting any values.
+*Expected Results:*
+Default values for all properties ({{null}} for strings, {{0}} for integers, {{0.0}} for doubles) are returned.
+*Actual Results:*
+Default values returned as expected.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000uf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:02 PM
+Verify that serialization works correctly for HistoryBean objects.,TMS-105,10137,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Highest,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:01 PM,11/Dec/24 1:01 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-105
+
+*Objective:* Verify that serialization works correctly for {{HistoryBean}} objects.
+*Pre-conditions:* {{HistoryBean}} object is instantiated, and serialization mechanism is available.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}} and set all properties.
+# Serialize the object to a file.
+# Deserialize the object from the file.
+# Verify all properties.
+*Expected Results:*
+The deserialized object retains all values set before serialization.
+*Actual Results:*
+The deserialized object retained all values",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000u7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:01 PM
+Verify behavior when transId is set after setting inherited properties.,TMS-104,10136,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:01 PM,11/Dec/24 1:01 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-104
+
+*Objective:* Verify behavior when {{transId}} is set after setting inherited properties.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Set inherited properties:
+#* {{setMailId(""user@example.com"")}}
+#* {{setTr_no(""TR9876"")}}
+#* {{setDate(""2024-12-10"")}}
+#* {{setFrom_stn(""SFO"")}}
+#* {{setTo_stn(""SEA"")}}
+#* {{setSeats(3)}}
+#* {{setAmount(350.00)}}
+# Call {{setTransId(""TXN54321"")}}.
+# Retrieve all properties, including {{transId}}.
+*Expected Results:*
+All properties, including {{transId}}, return the correct values.
+*Actual Results:*
+All properties returned the correct values.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000tz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:01 PM
+Verify behavior when negative values are set for inherited properties.,TMS-103,10135,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:00 PM,11/Dec/24 1:00 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-103
+
+*Objective:* Verify behavior when negative values are set for inherited properties.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call {{setSeats(-5)}} and {{setAmount(-300.00)}}.
+# Retrieve values using {{getSeats()}} and {{getAmount()}}.
+*Expected Results:*
+The application should either store negative values or throw an exception, based on business logic.
+*Actual Results:*
+Stored negative values without exception.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000tr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:00 PM
+Verify behavior when setting a very long value for transId.,TMS-102,10134,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:59 PM,11/Dec/24 12:59 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-102
+
+*Objective:* Verify behavior when setting a very long value for {{transId}}.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call {{setTransId(""TXN"" + ""12345"".repeat(1000))}}.
+# Call {{getTransId()}}.
+*Expected Results:*
+{{getTransId()}} returns the full value of the long {{transId}}.
+*Actual Results:*
+{{getTransId()}} returned the expected value.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000tj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:59 PM
+ Verify behavior when setting an empty string for transId.,TMS-101,10133,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Highest,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:59 PM,11/Dec/24 12:59 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-101
+
+*Objective:* Verify behavior when setting an empty string for {{transId}}.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call {{setTransId("""")}}.
+# Call {{getTransId()}}.
+*Expected Results:*
+{{getTransId()}} returns an empty string {{""""}}.
+*Actual Results:*
+{{getTransId()}} returned an empty string {{""""}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000tb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:59 PM
+Verify behavior when setting null values for transId.,TMS-100,10132,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:58 PM,11/Dec/24 12:58 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-100
+
+*Objective:* Verify behavior when setting {{null}} values for {{transId}}.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call {{setTransId(null)}}.
+# Call {{getTransId()}}.
+*Expected Results:*
+{{getTransId()}} returns {{null}}.
+*Actual Results:*
+{{getTransId()}} returned {{null}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000t3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:58 PM
+Verify behavior when both transId and inherited properties are set and retrieved.,TMS-99,10131,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:58 PM,11/Dec/24 12:58 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-99
+
+*Objective:* Verify behavior when both {{transId}} and inherited properties are set and retrieved.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Set multiple properties:
+#* {{setTransId(""TXN56789"")}}
+#* {{setMailId(""test@example.com"")}}
+#* {{setTr_no(""TR5678"")}}
+#* {{setDate(""2024-12-12"")}}
+#* {{setFrom_stn(""CHI"")}}
+#* {{setTo_stn(""LA"")}}
+#* {{setSeats(4)}}
+#* {{setAmount(400.00)}}
+# Retrieve all values using corresponding getters.
+*Expected Results:*
+All properties return the values set in Step 2.
+*Actual Results:*
+All properties returned the correct values.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000sv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:58 PM
+Verify that the HistoryBean class inherits the functionality of BookingDetails.,TMS-98,10130,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:55 PM,11/Dec/24 12:57 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-98
+
+*Objective:* Verify that the {{HistoryBean}} class inherits the functionality of {{BookingDetails}}.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call inherited methods:
+#* {{setMailId(""test@example.com"")}}
+#* {{setTr_no(""TR1234"")}}
+#* {{setDate(""2024-12-11"")}}
+#* {{setFrom_stn(""NYC"")}}
+#* {{setTo_stn(""BOS"")}}
+#* {{setSeats(2)}}
+#* {{setAmount(500.00)}}
+# Retrieve values using corresponding inherited getters.
+*Expected Results:*
+All inherited methods work as expected, returning the correct values.
+*Actual Results:*
+Inherited methods returned the correct values.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000sn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:55 PM
+Verify that setTransId and getTransId correctly set and retrieve the transaction ID.,TMS-97,10129,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:54 PM,11/Dec/24 12:54 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-97
+
+*Objective:* Verify that {{setTransId}} and {{getTransId}} correctly set and retrieve the transaction ID.
+*Pre-conditions:* {{HistoryBean}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{HistoryBean}}.
+# Call {{setTransId(""TXN12345"")}}.
+# Call {{getTransId()}}.
+*Expected Results:*
+{{getTransId()}} returns {{""TXN12345""}}.
+*Actual Results:*
+{{getTransId()}} returned {{""TXN12345""}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000sf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:54 PM
+Verify behavior when setting large values for numeric properties.,TMS-96,10128,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:53 PM,11/Dec/24 12:53 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-
+
+*Objective:* Verify behavior when setting large values for numeric properties.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setAmount(1_000_000.00)}}.
+# Call {{getAmount()}}.
+*Expected Results:*
+{{getAmount()}} returns {{1_000_000.00}}.
+*Actual Results:*
+{{getAmount()}} returned {{1_000_000.00}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000s7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:53 PM
+Verify behavior when setting negative values for numeric properties.,TMS-95,10127,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:52 PM,11/Dec/24 12:52 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-95
+
+*Objective:* Verify behavior when setting negative values for numeric properties.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setSeats(-1)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+The application should either store {{-1}} or throw an exception, based on business logic.
+*Actual Results:*
+Stored {{-1}} as expected.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000rz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:52 PM
+Verify behavior when setting null values for string properties.,TMS-94,10126,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 12:51 PM,11/Dec/24 12:51 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-94
+
+*Objective:* Verify behavior when setting {{null}} values for string properties.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setMailId(null)}}.
+# Call {{getMailId()}}.
+*Expected Results:*
+{{getMailId()}} returns {{null}}.
+*Actual Results:*
+{{getMailId()}} returned {{null}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000rr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:51 PM
+Verify that multiple properties can be set and retrieved correctly in sequence.,TMS-93,10125,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:49 PM,11/Dec/24 12:49 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-008
+
+*Objective:* Verify that multiple properties can be set and retrieved correctly in sequence.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Set multiple properties:
+#* {{setMailId(""test@example.com"")}}
+#* {{setTr_no(""TR5678"")}}
+#* {{setDate(""2024-12-11"")}}
+#* {{setFrom_stn(""NYC"")}}
+#* {{setTo_stn(""BOS"")}}
+#* {{setSeats(3)}}
+#* {{setAmount(200.50)}}
+# Retrieve properties using corresponding getters.
+*Expected Results:*
+All properties return the values set in Step 2.
+*Actual Results:*
+All properties returned the correct values.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000rj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:49 PM
+Verify that setAmount and getAmount correctly set and retrieve the booking amount.,TMS-92,10124,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:49 PM,11/Dec/24 12:49 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-92
+
+*Objective:* Verify that {{setAmount}} and {{getAmount}} correctly set and retrieve the booking amount.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setAmount(150.75)}}.
+# Call {{getAmount()}}.
+*Expected Results:*
+{{getAmount()}} returns {{150.75}}.
+*Actual Results:*
+{{getAmount()}} returned {{150.75}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000rb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:49 PM
+Verify that setSeats and getSeats correctly set and retrieve the number of seats.,TMS-91,10123,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:48 PM,11/Dec/24 12:48 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-006
+
+*Objective:* Verify that {{setSeats}} and {{getSeats}} correctly set and retrieve the number of seats.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setSeats(5)}}.
+# Call {{getSeats()}}.
+*Expected Results:*
+{{getSeats()}} returns {{5}}.
+*Actual Results:*
+{{getSeats()}} returned {{5}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000r3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:48 PM
+Verify that setFrom_stn and getFrom_stn correctly set and retrieve the departure station.,TMS-90,10122,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:47 PM,11/Dec/24 12:47 PM,11/Dec/24 12:47 PM,,,0,"h4. Test Case ID: TMS-90
+
+*Objective:* Verify that {{setFrom_stn}} and {{getFrom_stn}} correctly set and retrieve the departure station.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setFrom_stn(""NYC"")}}.
+# Call {{getFrom_stn()}}.
+*Expected Results:*
+{{getFrom_stn()}} returns {{""NYC""}}.
+*Actual Results:*
+{{getFrom_stn()}} returned {{""NYC""}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000qv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:47 PM
+Verify that setDate and getDate correctly set and retrieve the booking date.,TMS-89,10121,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:46 PM,11/Dec/24 12:46 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-89
+
+*Objective:* Verify that {{setDate}} and {{getDate}} correctly set and retrieve the booking date.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setDate(""2024-12-11"")}}.
+# Call {{getDate()}}.
+*Expected Results:*
+{{getDate()}} returns {{""2024-12-11""}}.
+*Actual Results:*
+{{getDate()}} returned {{""2024-12-11""}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000qn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:46 PM
+Verify that setTr_no and getTr_no correctly set and retrieve the train number.,TMS-88,10120,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:46 PM,11/Dec/24 12:46 PM,11/Dec/24 12:46 PM,,,0,"h4. Test Case ID: TMS-89
+
+*Objective:* Verify that {{setTr_no}} and {{getTr_no}} correctly set and retrieve the train number.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setTr_no(""TR1234"")}}.
+# Call {{getTr_no()}}.
+*Expected Results:*
+{{getTr_no()}} returns {{""TR1234""}}.
+*Actual Results:*
+{{getTr_no()}} returned {{""TR1234""}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000qf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:46 PM
+Verify that setMailId and getMailId correctly set and retrieve the email ID.,TMS-87,10119,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:45 PM,11/Dec/24 12:45 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-87
+
+*Objective:* Verify that {{setMailId}} and {{getMailId}} correctly set and retrieve the email ID.
+*Pre-conditions:* {{BookingDetails}} object is instantiated.
+*Steps to Execute:*
+
+# Create an instance of {{BookingDetails}}.
+# Call {{setMailId(""test@example.com"")}}.
+# Call {{getMailId()}}.
+*Expected Results:*
+{{getMailId()}} returns {{""test@example.com""}}.
+*Actual Results:*
+{{getMailId()}} returned {{""test@example.com""}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000q7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:45 PM
+Verify that getMessageByStatusCode performs efficiently for large enums.,TMS-86,10118,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:58 AM,11/Dec/24 1:58 AM,11/Dec/24 1:58 AM,,,0,"h4. Test Case ID: 86
+
+*Objective:* Verify that {{getMessageByStatusCode}} performs efficiently for large enums.
+*Pre-conditions:* The enum is extended with 100+ additional entries.
+*Steps to Execute:*
+
+# Measure the time taken to retrieve {{ResponseCode.SUCCESS}} with {{getMessageByStatusCode(200)}}.
+*Expected Results:*
+Lookup completes in constant or logarithmic time.
+*Actual Results:*
+Lookup completed in constant time",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000pz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:58 AM
+Verify that getMessageByStatusCode performs case-insensitive matches.,TMS-85,10117,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:55 AM,11/Dec/24 1:55 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-85
+
+*Objective:* Verify that {{getMessageByStatusCode}} performs case-insensitive matches.
+*Pre-conditions:* The status code input is provided in a valid format ({{200}}).
+*Steps to Execute:*
+
+# Call {{ResponseCode.getMessageByStatusCode(200)}}.
+# Verify whether case insensitivity impacts the lookup.
+*Expected Results:*
+Case does not impact lookup; returns {{Optional.of(ResponseCode.SUCCESS)}}.
+*Actual Results:*
+Case did not impact lookup; returned {{Optional.of(ResponseCode.SUCCESS)}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000pr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:55 AM
+"Verify that all ResponseCode enums return unique code values, except for documented duplicates.",TMS-84,10116,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:54 AM,11/Dec/24 1:54 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-84
+
+*Objective:* Verify that all {{ResponseCode}} enums return unique {{code}} values, except for documented duplicates.
+*Pre-conditions:* The {{ResponseCode}} enum contains duplicate codes only for documented cases ({{401}}).
+*Steps to Execute:*
+
+# Iterate through all {{ResponseCode}} values and check for duplicate {{code}}.
+*Expected Results:*
+Only {{401}} is duplicated; other {{code}} values are unique.
+*Actual Results:*
+{{401}} was duplicated as expected; no other duplicates found.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000pj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:54 AM
+Verify that all ResponseCode enums return non-null message values.,TMS-83,10115,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:53 AM,11/Dec/24 1:53 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-83
+
+*Objective:* Verify that all {{ResponseCode}} enums return non-null {{message}} values.
+*Pre-conditions:* The {{ResponseCode}} enum is fully initialized.
+*Steps to Execute:*
+
+# Iterate through all values of {{ResponseCode}} and call {{getMessage()}}.
+*Expected Results:*
+All {{getMessage()}} calls return non-null values.
+*Actual Results:*
+All {{getMessage()}} calls returned non-null values.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000pb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:53 AM
+Verify that getMessageByStatusCode handles a null input gracefully.,TMS-82,10114,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:45 AM,11/Dec/24 1:45 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-82
+
+*Objective:* Verify that {{getMessageByStatusCode}} handles a null input gracefully.
+*Pre-conditions:* The input status code is null or not provided.
+*Steps to Execute:*
+
+# Call {{ResponseCode.getMessageByStatusCode(null)}} and handle potential exceptions.
+*Expected Results:*
+Throws {{NullPointerException}} or an appropriate error depending on implementation.
+*Actual Results:*
+Throws {{NullPointerException}}",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000p3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:45 AM
+Verify that getMessageByStatusCode returns the correct ResponseCode for a boundary value in the enum.,TMS-81,10113,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:45 AM,11/Dec/24 1:45 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-81
+
+*Objective:* Verify that {{getMessageByStatusCode}} returns the correct {{ResponseCode}} for a boundary value in the enum.
+*Pre-conditions:* The {{ResponseCode}} enum contains {{SUCCESS}} with {{code = 200}} as the lowest value.
+*Steps to Execute:*
+
+# Call {{ResponseCode.getMessageByStatusCode(200)}}.
+*Expected Results:*
+Returns {{Optional.of(ResponseCode.SUCCESS)}}.
+*Actual Results:*
+Returned {{Optional.of(ResponseCode.SUCCESS)}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000ov:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:45 AM
+Verify that getMessageByStatusCode retrieves ResponseCode.SESSION_EXPIRED for duplicate status codes.,TMS-80,10112,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:44 AM,11/Dec/24 1:44 AM,11/Dec/24 1:44 AM,,,0,"h4. Test Case ID: TMS-80
+
+*Objective:* Verify that {{getMessageByStatusCode}} retrieves {{ResponseCode.SESSION_EXPIRED}} for duplicate status codes.
+*Pre-conditions:* Both {{ResponseCode.UNAUTHORIZED}} and {{ResponseCode.SESSION_EXPIRED}} have {{code = 401}}.
+*Steps to Execute:*
+
+# Call {{ResponseCode.getMessageByStatusCode(401)}}.
+*Expected Results:*
+Returns {{Optional.of(ResponseCode.UNAUTHORIZED)}} or {{Optional.of(ResponseCode.SESSION_EXPIRED)}} depending on implementation logic.
+*Actual Results:*
+Returned {{Optional.of(ResponseCode.UNAUTHORIZED)}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000on:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:44 AM
+Verify that getCode returns the correct code for ResponseCode.BAD_REQUEST.,TMS-79,10111,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 1:43 AM,11/Dec/24 1:43 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-79
+
+*Objective:* Verify that {{getCode}} returns the correct code for {{ResponseCode.BAD_REQUEST}}.
+*Pre-conditions:* {{ResponseCode.BAD_REQUEST}} has {{code = 400}}.
+*Steps to Execute:*
+
+# Call {{ResponseCode.BAD_REQUEST.getCode()}}.
+*Expected Results:*
+Returns {{400}}.
+*Actual Results:*
+Returned {{400}}.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000of:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:43 AM
+Verify that getMessage returns the correct message for ResponseCode.UNAUTHORIZED.,TMS-78,10110,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:42 AM,11/Dec/24 1:42 AM,11/Dec/24 1:43 AM,,,0,"h4. Test Case ID: RC-78
+
+*Objective:* Verify that {{getMessage}} returns the correct message for {{ResponseCode.UNAUTHORIZED}}.
+*Pre-conditions:* {{ResponseCode.UNAUTHORIZED}} has {{message = ""Invalid Credentials, Try Again""}}.
+*Steps to Execute:*
+
+# Call {{ResponseCode.UNAUTHORIZED.getMessage()}}.
+*Expected Results:*
+Returns {{""Invalid Credentials, Try Again""}}.
+*Actual Results:*
+Returned {{""Invalid Credentials, Try Again""}}",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000o7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:42 AM
+Verify that getMessageByStatusCode returns Optional.empty() for a status code not present in the enum.,TMS-77,10109,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:42 AM,11/Dec/24 1:42 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: RC-77
+
+*Objective:* Verify that {{getMessageByStatusCode}} returns {{Optional.empty()}} for a status code not present in the enum.
+*Pre-conditions:* The {{ResponseCode}} enum does not contain any entry with {{code = 999}}.
+*Steps to Execute:*
+
+# Call {{ResponseCode.getMessageByStatusCode(999)}}.
+*Expected Results:*
+Returns {{Optional.empty()}}.
+*Actual Results:*
+Returned {{Optional.empty()}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000nz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:42 AM
+Verify that getMessageByStatusCode returns Optional.of(ResponseCode.SUCCESS) for a valid status code 200.,TMS-76,10108,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:41 AM,11/Dec/24 1:41 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-76
+
+*Objective:* Verify that {{getMessageByStatusCode}} returns {{Optional.of(ResponseCode.SUCCESS)}} for a valid status code {{200}}.
+*Pre-conditions:* The {{ResponseCode}} enum contains {{SUCCESS}} with {{code = 200}}.
+*Steps to Execute:*
+
+# Call {{ResponseCode.getMessageByStatusCode(200)}}.
+*Expected Results:*
+Returns {{Optional.of(ResponseCode.SUCCESS)}}.
+*Actual Results:*
+Returned {{Optional.of(ResponseCode.SUCCESS)}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000nr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:41 AM
+Verify getCurrentCustomer retrieves the correct UserBean from the servlet context.,TMS-75,10107,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:37 AM,11/Dec/24 1:37 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-75
+
+*Objective:* Verify {{getCurrentCustomer}} retrieves the correct {{UserBean}} from the servlet context.
+*Pre-conditions:* The {{ServletContext}} contains an attribute with the key {{CUSTOMER}} mapped to a valid {{UserBean}} object.
+*Steps to Execute:*
+
+# Add a {{UserBean}} object with valid customer details to the {{ServletContext}}.
+# Call {{getCurrentCustomer(request)}}.
+*Expected Results:*
+Returns the {{UserBean}} object with the correct customer details.
+*Actual Results:*
+Returns the {{UserBean}} object because the attribute exists in the {{ServletContext}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000nj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:37 AM
+      Verify getCurrentUserName retrieves the correct username from the session.,TMS-74,10106,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:36 AM,11/Dec/24 1:36 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-74
+
+*Objective:* Verify {{getCurrentUserName}} retrieves the correct username from the session.
+*Pre-conditions:* The {{HttpServletRequest}} session contains an attribute {{uName = ""JohnDoe""}}.
+*Steps to Execute:*
+
+# Add {{uName = ""JohnDoe""}} to the session.
+# Call {{getCurrentUserName(request)}}.
+*Expected Results:*
+Returns {{""JohnDoe""}}.
+*Actual Results:*
+Returns {{""JohnDoe""}} because the attribute is present in the session.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000nb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:36 AM
+Verify logout clears all session cookies.,TMS-73,10105,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:35 AM,11/Dec/24 1:35 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-73
+
+*Objective:* Verify {{logout}} clears all session cookies.
+*Pre-conditions:* The {{HttpServletResponse}} is initialized.
+*Steps to Execute:*
+
+# Call {{logout(response)}}.
+# Inspect the response for cookies with {{maxAge = 0}}.
+*Expected Results:*
+Both cookies ({{sessionIdForADMIN}}, {{sessionIdForCUSTOMER}}) have {{maxAge = 0}}.
+*Actual Results:*
+Both cookies are created with {{maxAge = 0}} and added to the response.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000n3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:35 AM
+Verify validateUserAuthorization throws a TrainException when the user is not logged in.,TMS-72,10104,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:34 AM,11/Dec/24 1:34 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-72
+
+*Objective:* Verify {{validateUserAuthorization}} throws a {{TrainException}} when the user is not logged in.
+*Pre-conditions:* The {{HttpServletRequest}} does not contain a valid session ID cookie for the user role.
+*Steps to Execute:*
+
+# Mock the {{HttpServletRequest}} without a session ID cookie.
+# Call {{validateUserAuthorization(request, UserRole.ADMIN)}}.
+*Expected Results:*
+Throws {{TrainException}} with {{ResponseCode.SESSION_EXPIRED}}.
+*Actual Results:*
+Throws {{TrainException}} with {{ResponseCode.SESSION_EXPIRED}} because {{isLoggedIn}} returns {{false}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000mv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:34 AM
+Verify isLoggedIn returns false when the session ID cookie is missing.,TMS-71,10103,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:34 AM,11/Dec/24 1:34 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-71
+
+*Objective:* Verify {{isLoggedIn}} returns {{false}} when the session ID cookie is missing.
+*Pre-conditions:* The {{HttpServletRequest}} does not contain a cookie with {{key = ""sessionIdForADMIN""}}.
+*Steps to Execute:*
+
+# Do not add the required cookie to the request.
+# Call {{isLoggedIn(request, UserRole.ADMIN)}}.
+*Expected Results:*
+Returns {{false}}.
+*Actual Results:*
+Returns {{false}} because {{readCookie}} returns {{Optional.empty()}}.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000mn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:34 AM
+Verify isLoggedIn returns true when a valid session ID exists in the cookies.,TMS-70,10102,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:34 AM,11/Dec/24 1:34 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-70
+
+*Objective:* Verify {{isLoggedIn}} returns {{true}} when a valid session ID exists in the cookies.
+*Pre-conditions:* The {{HttpServletRequest}} contains a cookie with {{key = ""sessionIdForADMIN""}} and a valid value.
+*Steps to Execute:*
+
+# Add a cookie with {{key = ""sessionIdForADMIN""}} to the request.
+# Call {{isLoggedIn(request, UserRole.ADMIN)}}.
+*Expected Results:*
+Returns {{true}}.
+*Actual Results:*
+Returns {{true}} because {{readCookie}} retrieves the session ID successfully, and the {{Optional}} is present.
+
+----",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000mf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:34 AM
+Verify isLoggedIn returns true when a valid session ID exists in the cookies.,TMS-69,10101,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Highest,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:31 AM,11/Dec/24 1:20 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-69
+
+*Objective:* Verify {{isLoggedIn}} returns {{true}} when a valid session ID exists in the cookies.
+*Pre-conditions:* The {{HttpServletRequest}} contains a cookie with {{key = ""sessionIdForADMIN""}} and a valid value.
+*Steps to Execute:*
+
+# Add a cookie with {{key = ""sessionIdForADMIN""}} to the request.
+# Call {{isLoggedIn(request, UserRole.ADMIN)}}.
+*Expected Results:*
+Returns {{true}}.
+*Actual Results:*
+Returns {{true}} because {{readCookie}} retrieves the session ID successfully, and the {{Optional}} is present.
+
+----",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000m7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:31 AM
+Verify login returns UNAUTHORIZED response for invalid credentials.,TMS-68,10100,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:30 AM,11/Dec/24 1:30 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-68
+
+*Objective:* Verify {{login}} returns {{UNAUTHORIZED}} response for invalid credentials.
+*Pre-conditions:* The {{UserService}} throws a {{TrainException}} with {{ResponseCode.UNAUTHORIZED}} for the given credentials.
+*Steps to Execute:*
+
+# Mock a {{UserService}} to throw a {{TrainException}} for invalid credentials.
+# Call {{login(request, response, UserRole.ADMIN, ""invalidUser"", ""wrongPassword"")}}.
+*Expected Results:*
+Returns {{ResponseCode.UNAUTHORIZED : Invalid username or password}}.
+*Actual Results:*
+Returns {{ResponseCode.UNAUTHORIZED : Invalid username or password}}. The exception is caught, and the response code is updated accordingly.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000lz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:30 AM
+Verify login returns a success response when valid credentials are provided.,TMS-67,10099,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:28 AM,11/Dec/24 1:28 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-67
+
+*Objective:* Verify {{login}} returns a success response when valid credentials are provided.
+*Pre-conditions:* The username and password are valid for the specified {{UserRole}}.
+*Steps to Execute:*
+
+# Mock a {{UserService}} to return a valid {{UserBean}} for the given credentials.
+# Call {{login(request, response, UserRole.ADMIN, ""adminUser"", ""adminPassword"")}}.
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+Returns {{ResponseCode.SUCCESS}}. The code successfully retrieves the user and sets the appropriate session and cookie attributes.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000lr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:28 AM
+Verify login returns a success response when valid credentials are provided.,TMS-66,10098,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:27 AM,11/Dec/24 1:27 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-66
+
+*Objective:* Verify {{login}} returns a success response when valid credentials are provided.
+*Pre-conditions:* The username and password are valid for the specified {{UserRole}}.
+*Steps to Execute:*
+
+# Mock a {{UserService}} to return a valid {{UserBean}} for the given credentials.
+# Call {{login(request, response, UserRole.ADMIN, ""adminUser"", ""adminPassword"")}}.
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+Returns {{ResponseCode.SUCCESS}}. The code successfully retrieves the user and sets the appropriate session and cookie attributes.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000lj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:27 AM
+Verify readCookie retrieves the correct cookie value when the cookie exists.,TMS-65,10097,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:26 AM,11/Dec/24 1:26 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-65
+
+*Objective:* Verify {{readCookie}} retrieves the correct cookie value when the cookie exists.
+*Pre-conditions:* The {{HttpServletRequest}} object contains cookies, including one with {{key = ""sessionIdForADMIN""}} and {{value = ""12345""}}.
+*Steps to Execute:*
+
+# Create a mock {{HttpServletRequest}} object with cookies.
+# Call {{readCookie(request, ""sessionIdForADMIN"")}}.
+*Expected Results:*
+Returns {{Optional.of(""12345"")}}.
+*Actual Results:*
+Returns {{Optional.of(""12345"")}} because the {{filter}} method finds the cookie with the matching key and maps it to its value.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000lb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:26 AM
+Verify readCookie returns Optional.empty() when no cookies are present in the request.,TMS-64,10096,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:25 AM,11/Dec/24 1:25 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-64
+
+*Objective:* Verify {{readCookie}} returns {{Optional.empty()}} when no cookies are present in the request.
+*Pre-conditions:* The {{HttpServletRequest}} object has no cookies.
+*Steps to Execute:*
+
+# Create a mock {{HttpServletRequest}} object with no cookies.
+# Call {{readCookie(request, ""sessionIdForADMIN"")}}.
+*Expected Results:*
+Returns {{Optional.empty()}}.
+*Actual Results:*
+Returns {{Optional.empty()}} because the {{cookies}} array is {{null}}",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000l3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:25 AM
+Verify that the connection string is logged correctly during initialization.,TMS-63,10095,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:17 AM,11/Dec/24 1:17 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-63
+
+*Objective*: Verify that the connection string is logged correctly during initialization.
+*Pre-conditions*: The {{application}} file contains a valid {{connectionString}}.
+*Steps to Execute*:
+
+# Start the application.
+# Observe the logs for the connection string.
+*Expected Results*:
+The correct connection string is printed in the logs.
+*Actual Results*:
+The connection string was printed in the logs as expected.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000kv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:17 AM
+Verify that DBUtil.getConnection() handles multiple calls correctly,TMS-62,10094,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:16 AM,11/Dec/24 1:16 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-62
+
+*Objective*: Verify that {{DBUtil.getConnection()}} handles multiple calls correctly.
+*Pre-conditions*: The database connection is valid.
+*Steps to Execute*:
+
+# Call {{DBUtil.getConnection()}} multiple times in a loop.
+# Verify that the same {{Connection}} object is returned each time.
+*Expected Results*:
+Returns the same {{Connection}} object for every call.
+*Actual Results*:
+The same {{Connection}} object was returned for each call.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000kn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:16 AM
+Verify the system behavior when the connectionString property is invalid.,TMS-61,10093,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:15 AM,11/Dec/24 1:15 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-61
+
+*Objective*: Verify the system behavior when the {{connectionString}} property is invalid.
+*Pre-conditions*: The {{connectionString}} in the {{application}} file is incorrect.
+*Steps to Execute*:
+
+# Modify the {{application}} file with an invalid {{connectionString}}.
+# Restart the application.
+*Expected Results*:
+The stack trace of {{SQLException}} is printed in the logs, but the application does not crash.
+*Actual Results*:
+Exception handled as expected, and the logs showed the stack trace",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000kf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:15 AM
+Verify the getConnection() method when a valid connection exists.,TMS-60,10092,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:15 AM,11/Dec/24 1:15 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-60
+
+*Objective*: Verify the {{getConnection()}} method when a valid connection exists.
+*Pre-conditions*: The connection ({{con}}) is already initialized and valid.
+*Steps to Execute*:
+
+# Call {{DBUtil.getConnection()}}.
+# Check the returned connection object.
+*Expected Results*:
+Returns the valid {{Connection}} object without throwing exceptions.
+*Actual Results*:
+The valid {{Connection}} object was returned.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000k7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:15 AM
+Verify the behavior when the application file is missing.,TMS-59,10091,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:13 AM,11/Dec/24 1:13 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-59
+
+*Objective*: Verify the behavior when the {{application}} file is missing.
+*Pre-conditions*: The {{application}} file is not available in the classpath.
+*Steps to Execute*:
+
+# Remove or rename the {{application}} file.
+# Restart the application.
+*Expected Results*:
+The application throws a {{MissingResourceException}} and logs the error.
+*Actual Results*:
+The error was logged, and the application handled it gracefully.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000jz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:13 AM
+Verify that the ResourceBundle correctly loads properties from the application file.,TMS-58,10090,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:13 AM,11/Dec/24 1:13 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-58
+
+*Objective*: Verify that the {{ResourceBundle}} correctly loads properties from the {{application}} file.
+*Pre-conditions*: The {{application}} file exists in the classpath with valid properties.
+*Steps to Execute*:
+
+# Load the {{ResourceBundle}} using {{ResourceBundle.getBundle(""application"")}}.
+# Access a property, such as {{driverName}}.
+*Expected Results*:
+The property value is retrieved without any exceptions.
+*Actual Results*:
+The property value was retrieved successfully.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000jr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:13 AM
+Verify that a SQLException is handled when the database credentials are incorrect.,TMS-57,10089,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:11 AM,11/Dec/24 1:11 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-57
+
+*Objective*: Verify that a {{SQLException}} is handled when the database credentials are incorrect.
+*Pre-conditions*: The {{username}} or {{password}} in the {{application}} file is incorrect.
+*Steps to Execute*:
+
+# Modify the {{application}} file to have incorrect credentials.
+# Restart the application.
+*Expected Results*:
+The stack trace of {{SQLException}} is printed in the logs, but the application does not crash.
+*Actual Results*:
+Exception handled as expected, and the logs showed the stack trace.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000jj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:11 AM
+Verify that a ClassNotFoundException is handled gracefully when the driverName property is invalid.,TMS-56,10088,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:10 AM,11/Dec/24 1:10 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-55
+
+*Objective*: Verify that a {{ClassNotFoundException}} is handled gracefully when the {{driverName}} property is invalid.
+*Pre-conditions*: The {{driverName}} in the {{application}} file is incorrect or missing.
+*Steps to Execute*:
+
+# Set the {{driverName}} in the {{application}} file to an invalid value.
+# Restart the application.
+# Observe the system logs.
+*Expected Results*:
+The stack trace of {{ClassNotFoundException}} is printed in the logs, but the application does not crash.
+*Actual Results*:
+Exception handled as expected, and the logs showed the stack trace.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000jb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:10 AM
+Verify that a TrainException is thrown when the database connection is null.,TMS-55,10087,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:10 AM,11/Dec/24 1:10 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-54
+
+*Objective*: Verify that a {{TrainException}} is thrown when the database connection is null.
+*Pre-conditions*: Simulate a scenario where the connection ({{con}}) is null.
+*Steps to Execute*:
+
+# Mock or simulate the connection as {{null}}.
+# Call {{DBUtil.getConnection()}}.
+*Expected Results*:
+Throws a {{TrainException}} with the response code {{DATABASE_CONNECTION_FAILURE}}.
+*Actual Results*:
+{{TrainException}} was thrown with the expected response code.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000j3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:10 AM
+Verify that the database connection is successfully established when the properties in the application file are correct.,TMS-54,10086,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,11/Dec/24 1:09 AM,11/Dec/24 1:09 AM,11/Dec/24 9:58 PM,,,0,"h3. Test Case ID: TMS-53
+
+*Objective*: Verify that the database connection is successfully established when the properties in the {{application}} file are correct.
+*Pre-conditions*: The {{application}} file contains correct {{driverName}}, {{connectionString}}, {{username}}, and {{password}}.
+*Steps to Execute*:
+
+# Load the {{application}} resource bundle.
+# Verify that the driver is loaded successfully.
+# Verify that the connection is established.
+# Call {{DBUtil.getConnection()}}.
+*Expected Results*:
+Returns a valid {{Connection}} object without throwing any exceptions.
+*Actual Results*:
+Connection established successfully, and the {{Connection}} object is returned.",,i222716 Muhammad Azmar,64144e8267102fc717c01f4b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000iv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 1:09 AM
+Verify that loginUser successfully authenticates a user with valid credentials.,TMS-52,10084,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:59 AM,11/Dec/24 12:59 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-52
+
+*Objective:* Verify that {{loginUser}} successfully authenticates a user with valid credentials.
+*Pre-conditions:* The database contains a user with email ID {{user@example.com}} and password {{password123}}.
+*Steps to Execute:*
+
+# Call {{loginUser(""user@example.com"", ""password123"")}}.
+*Expected Results:*
+Returns a {{UserBean}} object with valid user details.
+*Actual Results:*
+Returned a {{UserBean}} object with email ID {{user@example.com}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000in:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:59 AM
+Verify that deleteUser returns ResponseCode.FAILURE when the user does not exist.,TMS-51,10083,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:57 AM,11/Dec/24 12:57 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-49
+
+*Objective:* Verify that {{deleteUser}} returns {{ResponseCode.FAILURE}} when the user does not exist.
+*Pre-conditions:* The database does not contain a user with email ID {{nonexistent@example.com}}.
+*Steps to Execute:*
+
+# Create a {{UserBean}} object for {{nonexistent@example.com}}.
+# Call {{deleteUser(userBean)}}.
+*Expected Results:*
+Returns {{ResponseCode.FAILURE}}.
+*Actual Results:*
+Returned {{ResponseCode.FAILURE}} as expected.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000if:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:57 AM
+Verify that deleteUser successfully deletes a user from the database.,TMS-50,10082,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:57 AM,11/Dec/24 12:57 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-50
+
+*Objective:* Verify that {{deleteUser}} successfully deletes a user from the database.
+*Pre-conditions:* The database contains a user with email ID {{user@example.com}}.
+*Steps to Execute:*
+
+# Create a {{UserBean}} object for {{user@example.com}}.
+# Call {{deleteUser(userBean)}}.
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}} and deletes the user record.
+*Actual Results:*
+Returned {{ResponseCode.SUCCESS}} and the user record was removed.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000i7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:57 AM
+Verify that updateUser returns ResponseCode.FAILURE when the user does not exist.,TMS-49,10081,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:56 AM,11/Dec/24 12:56 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-49
+
+*Objective:* Verify that {{updateUser}} returns {{ResponseCode.FAILURE}} when the user does not exist.
+*Pre-conditions:* The database does not contain a user with email ID {{nonexistent@example.com}}.
+*Steps to Execute:*
+
+# Create a {{UserBean}} object with email ID {{nonexistent@example.com}}.
+# Call {{updateUser(userBean)}}.
+*Expected Results:*
+Returns {{ResponseCode.FAILURE}}.
+*Actual Results:*
+Returned {{ResponseCode.FAILURE}} as expected",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000hz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:56 AM
+Verify that updateUser successfully updates a user’s details.,TMS-48,10080,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:55 AM,11/Dec/24 12:55 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-48
+
+*Objective:* Verify that {{updateUser}} successfully updates a user’s details.
+*Pre-conditions:* The database contains a user with email ID {{user@example.com}}.
+*Steps to Execute:*
+
+# Create a {{UserBean}} object with updated details for {{user@example.com}}.
+# Call {{updateUser(userBean)}}.
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+Returned {{ResponseCode.SUCCESS}} and updated the user details.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000hr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:55 AM
+Verify that getUserByEmailId returns null when the email ID does not exist.,TMS-47,10079,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:54 AM,11/Dec/24 12:54 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-47
+
+*Objective:* Verify that {{getUserByEmailId}} returns {{null}} when the email ID does not exist.
+*Pre-conditions:* The database does not contain a user with email ID {{nonexistent@example.com}}.
+*Steps to Execute:*
+
+# Call {{getUserByEmailId(""nonexistent@example.com"")}}.
+*Expected Results:*
+Returns {{null}}.
+*Actual Results:*
+Returned {{null}} as expected.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000hj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:54 AM
+Verify that getUserByEmailId retrieves user details when the email ID exists.,TMS-46,10078,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:46 AM,11/Dec/24 12:46 AM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-42
+
+*Objective:* Verify that {{getUserByEmailId}} retrieves user details when the email ID exists.
+*Pre-conditions:* The database contains a user with email ID {{user@example.com}}.
+*Steps to Execute:*
+
+# Call {{getUserByEmailId(""user@example.com"")}}.
+*Expected Results:*
+Returns a {{UserBean}} object with correct details for the user {{user@example.com}}.
+*Actual Results:*
+Returned a {{UserBean}} object with email ID {{user@example.com}} and valid details.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000hb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:46 AM
+Verify that createHistory gracefully handles database connection failures.,TMS-45,10077,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:30 AM,11/Dec/24 12:30 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-45
+*Objective*: Verify that {{createHistory}} gracefully handles database connection failures.
+*Pre-conditions*: Simulate a database connection failure ({{DBUtil.getConnection}} returns {{null}}).
+*Steps to Execute*:
+
+# Call {{createHistory}} with valid {{HistoryBean}}.
+*Expected Results*:
+
+* Throws {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Unable to connect to the database.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000h3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:30 AM
+Verify that createHistory handles negative amount values.,TMS-44,10076,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:29 AM,11/Dec/24 12:29 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-44
+*Objective*: Verify that {{createHistory}} handles negative amount values.
+*Pre-conditions*: Provide {{HistoryBean}} with {{amount=-100.0}}.
+*Steps to Execute*:
+
+# Call {{createHistory}} with {{amount=-100.0}}.
+*Expected Results*:
+
+* Throws {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Amount cannot be negative.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000gv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:29 AM
+Verify that createHistory handles invalid train number.,TMS-43,10075,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:29 AM,11/Dec/24 12:29 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-43
+*Objective*: Verify that {{createHistory}} handles invalid train number.
+*Pre-conditions*: Provide {{HistoryBean}} with invalid {{tr_no}}.
+*Steps to Execute*:
+
+# Call {{createHistory}} with {{tr_no=invalidTrain123}}.
+*Expected Results*:
+
+* Throws {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Train number invalid.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000gn:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:29 AM
+Verify that createHistory handles negative seat count.,TMS-42,10074,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:27 AM,11/Dec/24 12:27 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-42
+*Objective*: Verify that {{createHistory}} handles negative seat count.
+*Pre-conditions*: Provide {{HistoryBean}} with {{seats=-5}}.
+*Steps to Execute*:
+
+# Call {{createHistory}} with a {{HistoryBean}} where {{seats=-5}}.
+*Expected Results*:
+
+* Throws {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Seats cannot be negative.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000gf:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:27 AM
+ Verify that createHistory generates a unique transaction ID.,TMS-41,10073,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:27 AM,11/Dec/24 12:27 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-41
+*Objective*: Verify that {{createHistory}} generates a unique transaction ID.
+*Pre-conditions*: Call {{createHistory}} multiple times with different details.
+*Steps to Execute*:
+
+# Call {{createHistory}} twice with valid {{HistoryBean}} objects.
+*Expected Results*:
+
+* Each call generates a unique {{transId}}.
+*Actual Results*:
+* Generated {{transId=abc123}} and {{transId=xyz456}}.
+
+----",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000g7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:27 AM
+Verify that createHistory handles SQL exceptions during record insertion.,TMS-40,10072,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Highest,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:26 AM,11/Dec/24 12:26 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-40
+*Objective*: Verify that {{createHistory}} handles SQL exceptions during record insertion.
+*Pre-conditions*: Simulate a SQL exception (e.g., unique constraint violation on {{transId}}).
+*Steps to Execute*:
+
+# Call {{createHistory}} with a duplicate {{transId}}.
+*Expected Results*:
+
+* Throws {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Unique constraint violated on transId.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000fz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:26 AM
+Verify that createHistory handles null input for the details parameter.,TMS-39,10071,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:25 AM,11/Dec/24 12:25 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-39
+*Objective*: Verify that {{createHistory}} handles {{null}} input for the {{details}} parameter.
+*Pre-conditions*: None.
+*Steps to Execute*:
+
+# Call {{createHistory(null)}}.
+*Expected Results*:
+
+* Throws a {{NullPointerException}} or {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Booking details cannot be null.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000fr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:25 AM
+Verify that createHistory creates a booking history record successfully.,TMS-38,10070,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:23 AM,11/Dec/24 12:23 AM,11/Dec/24 9:58 PM,,,0,"*Test* *Case ID*: TMS-38
+*Objective*: Verify that {{createHistory}} creates a booking history record successfully.
+*Pre-conditions*: Valid {{HistoryBean}} object with required fields populated.
+*Steps to Execute*:
+
+# Call {{createHistory}} with valid {{HistoryBean}}.
+*Expected Results*:
+
+* Returns a {{HistoryBean}} object with {{transId}} populated and matching other details.
+*Actual Results*:
+* Returned a valid {{HistoryBean}} with {{transId=abc123}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000fj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:23 AM
+Verify that getAllBookingsByCustomerId handles SQL exceptions during query execution.,TMS-37,10069,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:22 AM,11/Dec/24 12:22 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-37
+*Objective*: Verify that {{getAllBookingsByCustomerId}} handles SQL exceptions during query execution.
+*Pre-conditions*: Simulate a SQL exception (e.g., incorrect table name {{HIST}} instead of {{HISTORY}}).
+*Steps to Execute*:
+
+# Call {{getAllBookingsByCustomerId(""test@example.com"")}}.
+*Expected Results*:
+
+* Throws {{TrainException}} with an appropriate message.
+*Actual Results*:
+* Threw {{TrainException}} with message: _""Table or view not found.""_
+
+----",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000fb:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:22 AM
+Verify that getAllBookingsByCustomerId handles null input for customerEmailId.,TMS-36,10068,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:21 AM,11/Dec/24 12:21 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-36
+*Objective*: Verify that {{getAllBookingsByCustomerId}} handles {{null}} input for {{customerEmailId}}.
+*Pre-conditions*: None.
+*Steps to Execute*:
+
+# Call {{getAllBookingsByCustomerId(null)}}.
+*Expected Results*:
+
+* Throws a {{NullPointerException}} or custom exception indicating invalid input.
+*Actual Results*:
+* Threw a {{NullPointerException}} with message: _""Email ID cannot be null.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000f3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:21 AM
+Verify that getAllBookingsByCustomerId returns an empty list when the customer has no bookings.,TMS-35,10067,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:20 AM,11/Dec/24 12:20 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-35
+*Objective*: Verify that {{getAllBookingsByCustomerId}} returns an empty list when the customer has no bookings.
+*Pre-conditions*: No records exist for {{customerEmailId=empty@example.com}}.
+*Steps to Execute*:
+
+# Call {{getAllBookingsByCustomerId(""empty@example.com"")}}.
+*Expected Results*:
+
+* Returns an empty list ({{[]}}).
+*Actual Results*:
+* Returned an empty list ({{[]}}).",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000ev:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:20 AM
+Verify that getAllBookingsByCustomerId retrieves bookings when the customer has valid ,TMS-34,10066,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:19 AM,11/Dec/24 12:19 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-34
+*Objective*: Verify that {{getAllBookingsByCustomerId}} retrieves bookings when the customer has valid bookings.
+*Pre-conditions*: The database contains booking records for {{customerEmailId=test@example.com}}.
+*Steps to Execute*:
+
+# Call {{getAllBookingsByCustomerId(""test@example.com"")}}.
+*Expected Results*:
+
+* Returns a list of {{HistoryBean}} objects containing valid booking details for the customer.
+*Actual Results*:
+* Returned a list of bookings with 3 entries for {{test@example.com}}",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000en:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:19 AM
+Verify that updateTrain handles non-existent train numbers,TMS-33,10065,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:14 AM,11/Dec/24 12:14 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-33
+*Objective*: Verify that {{updateTrain}} handles non-existent train numbers.
+*Pre-conditions*: Train number {{888}} does not exist in the database.
+*Steps to Execute*:
+
+# Call {{updateTrain}} with a valid train object where {{trainNumber=888}}.
+*Expected Results*:
+
+* Returns {{ResponseCode.FAILURE}}.
+*Actual Results*:
+* Returned {{ResponseCode.FAILURE}} with message: _""Train not found for update.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000ef:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:14 AM
+Verify that updateTrain handles a null train object.,TMS-32,10064,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:13 AM,11/Dec/24 12:13 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-32
+*Objective*: Verify that {{updateTrain}} handles a {{null}} train object.
+*Pre-conditions*: None.
+*Steps to Execute*:
+
+# Call {{updateTrain(null)}}.
+*Expected Results*:
+
+* Throws a {{NullPointerException}} or returns {{ResponseCode.FAILURE}}.
+*Actual Results*:
+* Returned {{ResponseCode.FAILURE}} with message: _""Train object cannot be null.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000e7:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:13 AM
+Verify that getTrainsBetweenStations returns an empty list when no trains are found.,TMS-31,10063,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:13 AM,11/Dec/24 12:13 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-31
+*Objective*: Verify that {{getTrainsBetweenStations}} returns an empty list when no trains are found.
+*Pre-conditions*: No trains exist between {{fromStation=""A""}} and {{toStation=""B""}}.
+*Steps to Execute*:
+
+# Call {{getTrainsBetweenStations(""A"", ""B"")}}.
+*Expected Results*:
+
+* Returns an empty list ({{[]}}).
+*Actual Results*:
+* Returned an empty list ({{[]}})",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000dz:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:13 AM
+Verify that deleteTrainById handles non-existent train numbers gracefully.,TMS-30,10062,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:12 AM,11/Dec/24 12:12 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-30
+*Objective*: Verify that {{deleteTrainById}} handles non-existent train numbers gracefully.
+*Pre-conditions*: Train number {{555}} does not exist in the database.
+*Steps to Execute*:
+
+# Call {{deleteTrainById(555)}}.
+*Expected Results*:
+
+* Returns {{ResponseCode.FAILURE}}.
+*Actual Results*:
+* Returned {{ResponseCode.FAILURE}} with message: _""Train not found.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000dr:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:12 AM
+Verify that getAllTrains returns an empty list when no trains exist in the database,TMS-29,10061,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:11 AM,11/Dec/24 12:11 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-29
+*Objective*: Verify that {{getAllTrains}} returns an empty list when no trains exist in the database.
+*Pre-conditions*: The train table is empty.
+*Steps to Execute*:
+
+# Call {{getAllTrains()}}.
+*Expected Results*:
+
+* Returns an empty list ({{[]}}).
+*Actual Results*:
+* Returned an empty list ({{[]}}).",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000dj:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:11 AM
+Verify that getTrainById returns null when no train is found for the given ID.,TMS-28,10060,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:10 AM,11/Dec/24 12:10 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-28
+*Objective*: Verify that {{getTrainById}} returns {{null}} when no train is found for the given ID.
+*Pre-conditions*: Train ID {{999}} does not exist in the database.
+*Steps to Execute*:
+
+# Call {{getTrainById(999)}}.
+*Expected Results*:
+
+* Returns {{null}}.
+*Actual Results*:
+* Returned {{null}}.",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000db:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:10 AM
+Verify that addTrain handles a database connection failure.,TMS-27,10059,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,11/Dec/24 12:09 AM,11/Dec/24 12:09 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-27
+*Objective*: Verify that {{addTrain}} handles a database connection failure.
+*Pre-conditions*: Simulate a database failure (e.g., {{DBUtil.getConnection}} returns {{null}}).
+*Steps to Execute*:
+
+# Call {{addTrain}} with valid train details ({{trainNumber=101, trainName=""Express"", ...}}).
+*Expected Results*:
+
+* Returns {{ResponseCode.FAILURE}} with an appropriate error message.
+*Actual Results*:
+* Returned {{ResponseCode.FAILURE}} with message: _""Database connection error.""_",,MasterOz,712020:e3d4626a-3a20-4f10-99f4-d598c472337d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000d3:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:09 AM
+Verify that addTrain handles a null train object.,TMS-26,10058,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,11/Dec/24 12:04 AM,11/Dec/24 12:04 AM,11/Dec/24 9:58 PM,,,0,"*Test Case ID*: TMS-26
+*Objective*: Verify that {{addTrain}} handles a {{null}} train object.
+*Pre-conditions*: None.
+*Steps to Execute*:
+
+# Call {{addTrain(null)}} as the argument.
+*Expected Results*:
+
+* Throws a {{NullPointerException}} or returns {{ResponseCode.FAILURE}}.
+*Actual Results*:
+* Returned {{ResponseCode.FAILURE}} with message: _""Train object cannot be null.""_",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000cv:,,,,,,,,,,,,,,,,To Do,11/Dec/24 12:04 AM
+Verify that getTrainsBetweenStations handles case-insensitive station names.,TMS-25,10057,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:48 PM,10/Dec/24 11:48 PM,10/Dec/24 11:48 PM,,,0,"h4. Test Case ID: TMS-25
+
+*Objective:* Verify that {{getTrainsBetweenStations}} handles case-insensitive station names.
+*Pre-conditions:*
+
+# At least one train travels between the specified stations.
+
+*Steps to Execute:*
+
+# Call {{getTrainsBetweenStations}} with station names in mixed case.
+
+*Expected Results:*
+Returns a list of trains between the specified stations.
+*Actual Results:*
+Returned correct train details.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000cn:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:48 PM
+Verify that getTrainsBetweenStations returns an empty list when no trains exist between the stations.,TMS-24,10056,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:47 PM,10/Dec/24 11:47 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-24
+
+*Objective:* Verify that {{getTrainsBetweenStations}} returns an empty list when no trains exist between the stations.
+*Pre-conditions:*
+
+# No trains travel between the specified stations.
+
+*Steps to Execute:*
+
+# Call {{getTrainsBetweenStations}} with non-existent station pairs.
+
+*Expected Results:*
+Returns an empty list.
+*Actual Results:*
+Returned an empty list.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000cf:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:47 PM
+Verify that getTrainsBetweenStations retrieves trains for valid station pairs.,TMS-23,10055,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:46 PM,10/Dec/24 11:46 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-23
+
+*Objective:* Verify that {{getTrainsBetweenStations}} retrieves trains for valid station pairs.
+*Pre-conditions:*
+
+# At least one train travels between the specified stations.
+
+*Steps to Execute:*
+
+# Call {{getTrainsBetweenStations}} with valid {{fromStation}} and {{toStation}} values.
+
+*Expected Results:*
+Returns a list of trains between the specified stations.
+*Actual Results:*
+Returned correct train details.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000c7:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:46 PM
+Verify that getAllTrains returns an empty list when no records exist.,TMS-22,10054,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:45 PM,10/Dec/24 11:45 PM,11/Dec/24 9:58 PM,,,0,"*Objective:* Verify that {{getAllTrains}} returns an empty list when no records exist.
+*Pre-conditions:*
+
+# No train records exist in the database.
+
+*Steps to Execute:*
+
+# Call {{getAllTrains}}.
+
+*Expected Results:*
+Returns an empty list.
+*Actual Results:*
+Returned an empty list.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000bz:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:45 PM
+Verify that getAllTrains retrieves all train records.,TMS-21,10053,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:44 PM,10/Dec/24 11:44 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-21
+
+*Objective:* Verify that {{getAllTrains}} retrieves all train records.
+*Pre-conditions:*
+
+# At least one train record exists in the database.
+
+*Steps to Execute:*
+
+# Call {{getAllTrains}}.
+
+*Expected Results:*
+Returns a list of all train records.
+*Actual Results:*
+Returned all train records.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000br:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:44 PM
+Verify that getTrainById throws a TrainException when the train number does not exist.,TMS-20,10052,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:43 PM,10/Dec/24 11:43 PM,11/Dec/24 9:58 PM,,,0,"*Objective:* Verify that {{getTrainById}} throws a {{TrainException}} when the train number does not exist.
+*Pre-conditions:*
+
+# Train number does not exist in the database.
+
+*Steps to Execute:*
+
+# Call {{getTrainById}} with a non-existent train number.
+
+*Expected Results:*
+Throws {{TrainException}}.
+*Actual Results:*
+{{TrainException}} was thrown.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000bj:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:43 PM
+Verify that getTrainById retrieves the correct train details,TMS-19,10051,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:42 PM,10/Dec/24 11:42 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-19
+
+*Objective:* Verify that {{getTrainById}} retrieves the correct train details.
+*Pre-conditions:*
+
+# Train number exists in the database.
+
+*Steps to Execute:*
+
+# Call {{getTrainById}} with a valid train number.
+
+*Expected Results:*
+Returns the {{TrainBean}} with the correct details.
+*Actual Results:*
+Returned correct train details.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000bb:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:42 PM
+Verify that updateTrain fails when the train number does not exist.,TMS-18,10050,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:41 PM,10/Dec/24 11:41 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-18
+
+*Objective:* Verify that {{updateTrain}} fails when the train number does not exist.
+*Pre-conditions:*
+
+# Train number does not exist in the database.
+
+*Steps to Execute:*
+
+# Call {{updateTrain}} with a {{TrainBean}} containing a non-existent train number.
+
+*Expected Results:*
+Returns {{ResponseCode.FAILURE}}.
+*Actual Results:*
+Failed with {{ResponseCode.FAILURE}}",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000b3:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:41 PM
+Verify that updateTrain successfully updates a train's details.,TMS-17,10049,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:40 PM,10/Dec/24 11:40 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-17
+
+*Objective:* Verify that {{updateTrain}} successfully updates a train's details.
+*Pre-conditions:*
+
+# Train number exists in the database.
+
+*Steps to Execute:*
+
+# Call {{updateTrain}} with a {{TrainBean}} containing updated details.
+
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+Train was updated successfully, and {{ResponseCode.SUCCESS}} was returned.",,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000av:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:40 PM
+Verify that deleteTrainById fails when the train number does not exist.,TMS-16,10048,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:37 PM,10/Dec/24 11:37 PM,10/Dec/24 11:38 PM,,,0,"*Objective:* Verify that {{deleteTrainById}} fails when the train number does not exist.
+*Pre-conditions:*
+
+# Train number does not exist in the database.
+
+*Steps to Execute:*
+
+# Call {{deleteTrainById}} with a non-existent train number.
+
+*Expected Results:*
+Returns {{ResponseCode.FAILURE}}.
+*Actual Results:*
+Failed with {{ResponseCode.FAILURE}}",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000an:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:37 PM
+Verify that deleteTrainById deletes the train successfully when the train number exists,TMS-15,10047,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:37 PM,10/Dec/24 11:37 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-15
+
+*Objective:* Verify that {{deleteTrainById}} deletes the train successfully when the train number exists.
+*Pre-conditions:*
+
+# Train number exists in the database.
+
+*Steps to Execute:*
+
+# Call {{deleteTrainById}} with a valid train number.
+
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+Train was deleted successfully, and {{ResponseCode.SUCCESS}} was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000af:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:37 PM
+Verify that addTrain fails when the train number already exists,TMS-14,10046,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:35 PM,10/Dec/24 11:35 PM,10/Dec/24 11:36 PM,,,0,"h4. Test Case ID: TMS-14
+
+*Objective:* Verify that {{addTrain}} fails when the train number already exists.
+*Pre-conditions:*
+
+# Train number already exists in the database.
+
+*Steps to Execute:*
+
+# Call {{addTrain}} with a {{TrainBean}} containing the existing train number.
+
+*Expected Results:*
+Returns {{ResponseCode.FAILURE}} with a duplicate key error message.
+*Actual Results:*
+Failed with {{ResponseCode.FAILURE}} due to duplicate key error.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i000a7:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:35 PM
+Verify that addTrain successfully adds a new train record.,TMS-13,10045,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:34 PM,10/Dec/24 11:34 PM,11/Dec/24 9:58 PM,,,0,"h4. Test Case ID: TMS-13
+
+*Objective:* Verify that {{addTrain}} successfully adds a new train record.
+*Pre-conditions:*
+
+# Train number does not already exist in the database.
+
+*Steps to Execute:*
+
+# Call {{addTrain}} with a {{TrainBean}} containing valid train details.
+
+*Expected Results:*
+Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+Train was added successfully, and {{ResponseCode.SUCCESS}} was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0009z:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:34 PM
+est the behavior when the database connection fails during deleteUser,TMS-12,10044,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Low,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:25 PM,10/Dec/24 11:25 PM,10/Dec/24 11:26 PM,,,0,"h4. *Test Case ID:* {{TMS-12}}
+
+*Objective:* Test the behavior when the database connection fails during {{deleteUser}}.
+*Pre-conditions:*
+
+* Simulate a database connection failure.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with any {{UserRole}}.
+# Call {{deleteUser}}.
+*Expected Results:*
+
+* Returns {{ResponseCode.FAILURE}} with an appropriate error message.
+*Actual Results:*
+* Operation failed due to a database error, and {{ResponseCode.FAILURE}} was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0009r:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:25 PM
+ Verify that deleteUser returns failure when the email ID does not exist.,TMS-11,10043,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:23 PM,10/Dec/24 11:23 PM,11/Dec/24 9:58 PM,,,0,"h4. *Test Case ID:* {{TMS-11}}
+
+*Objective:* Verify that {{deleteUser}} returns failure when the email ID does not exist.
+*Pre-conditions:*
+
+* No record matches the provided email ID.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with any {{UserRole}}.
+# Call {{deleteUser}} with a {{UserBean}} having a non-existing email ID.
+*Expected Results:*
+
+* Returns {{ResponseCode.FAILURE}}.
+*Actual Results:*
+* Deletion failed, and {{ResponseCode.FAILURE}} was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0009j:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:23 PM
+Verify that deleteUser deletes the user successfully when the email ID exists.,TMS-10,10042,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:22 PM,10/Dec/24 11:22 PM,11/Dec/24 9:58 PM,,,0,"h4. *Test Case ID:* {{TMS-10}}
+
+*Objective:* Verify that {{deleteUser}} deletes the user successfully when the email ID exists.
+*Pre-conditions:*
+
+* A record with the provided email ID exists in the table.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.ADMIN}}.
+# Call {{deleteUser}} with a {{UserBean}} containing the email ID.
+*Expected Results:*
+
+* Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+* User was deleted successfully, and {{ResponseCode.SUCCESS}} was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0009b:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:22 PM
+Verify that updateUser returns failure when the email ID does not exist,TMS-9,10041,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:20 PM,10/Dec/24 11:20 PM,10/Dec/24 11:21 PM,,,0,"h4. *Test Case ID:* {{TMS-9}}
+
+*Objective:* Verify that {{updateUser}} returns failure when the email ID does not exist.
+*Pre-conditions:*
+
+* No record matches the provided email ID.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with any {{UserRole}}.
+# Call {{updateUser}} with a {{UserBean}} having a non-existing email ID.
+*Expected Results:*
+
+* Returns {{ResponseCode.FAILURE}}.
+*Actual Results:*
+* Update operation failed, and {{ResponseCode.FAILURE}} was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i00093:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:20 PM
+Verify that updateUser updates the record and returns success.,TMS-8,10040,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:19 PM,10/Dec/24 11:19 PM,10/Dec/24 11:19 PM,,,0,"h4. *Test Case ID:* {{TMS-8}}
+
+*Objective:* Verify that {{updateUser}} updates the record and returns success.
+*Pre-conditions:*
+
+* A record with the provided email ID exists in the table.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.CUSTOMER}}.
+# Call {{updateUser}} with a {{UserBean}} containing updated data.
+*Expected Results:*
+
+* Returns {{ResponseCode.SUCCESS}}.
+*Actual Results:*
+* Record was updated successfully, and {{ResponseCode.SUCCESS}} was returned",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0008v:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:19 PM
+Test the behavior when the database connection fails during getAllUsers,TMS-7,10039,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:18 PM,10/Dec/24 11:18 PM,11/Dec/24 9:58 PM,,,0,"h4. *Test Case ID:* {{TMS-7}}
+
+*Objective:* Test the behavior when the database connection fails during {{getAllUsers}}.
+*Pre-conditions:*
+
+* Simulate a database connection failure.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with any {{UserRole}}.
+# Call {{getAllUsers}}.
+*Expected Results:*
+
+* Throws {{TrainException}} with the appropriate database error message.
+*Actual Results:*
+* Exception was thrown with a database connection failure message.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0008n:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:18 PM
+Verify that getAllUsers throws TrainException when no users exist,TMS-6,10038,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:16 PM,10/Dec/24 11:16 PM,11/Dec/24 9:58 PM,,,0,"h4. *Test Case ID:* {{TMS-6}}
+
+*Objective:* Verify that {{getAllUsers}} throws {{TrainException}} when no users exist.
+*Pre-conditions:*
+
+* The table exists but is empty.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.ADMIN}}.
+# Call {{getAllUsers}}.
+*Expected Results:*
+
+* Throws {{TrainException}} with {{ResponseCode.NO_CONTENT}}.
+*Actual Results:*
+* Exception was thrown with {{ResponseCode.NO_CONTENT}} as expected.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0008f:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:16 PM
+Verify that getAllUsers returns all users,TMS-5,10037,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:15 PM,10/Dec/24 11:15 PM,11/Dec/24 9:58 PM,,,0,"h4. *Test Case ID:* TMS-5
+
+*Objective:* Verify that {{getAllUsers}} returns all users when records exist.
+*Pre-conditions:*
+
+* The table for {{UserRole}} contains multiple records.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.CUSTOMER}}.
+# Call {{getAllUsers}}.
+*Expected Results:*
+
+* Returns a list of {{UserBean}} objects for all records.
+*Actual Results:*
+* A list of {{UserBean}} objects was retrieved successfully.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i00087:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:15 PM
+Validate SQL injection protection in getUserByEmailId,TMS-4,10036,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:14 PM,10/Dec/24 11:14 PM,10/Dec/24 11:14 PM,,,0,"h4. *Test Case ID:* {{TMS-4}}
+
+*Objective:* Validate SQL injection protection in {{getUserByEmailId}}.
+*Pre-conditions:*
+
+* None.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with any {{UserRole}}.
+# Call {{getUserByEmailId}} with a malicious string like {{""; DROP TABLE USERS; --}}.
+*Expected Results:*
+
+* The query does not execute malicious code and returns no data or an error.
+*Actual Results:*
+* SQL injection attempt was neutralized; no data was returned.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0007z:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:14 PM
+Get User when DB connection fails,TMS-3,10035,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,Medium,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:12 PM,10/Dec/24 11:12 PM,10/Dec/24 11:13 PM,,,0,"h4. *Test Case ID:* TMS-3
+
+*Objective:* Verify the behavior when the database connection fails during {{getUserByEmailId}}.
+*Pre-conditions:*
+
+* Simulate a failure in {{DBUtil.getConnection()}}.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.CUSTOMER}}.
+# Call {{getUserByEmailId}} with any email ID.
+*Expected Results:*
+
+* Throws {{TrainException}} with a database error message.
+*Actual Results:*
+* Exception was thrown with a database connection failure message.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0007r:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:12 PM
+Exception thrown when no user exits,TMS-2,10034,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:10 PM,10/Dec/24 11:10 PM,10/Dec/24 11:12 PM,,,0,"*Objective:* Verify that the {{getUserByEmailId}} method throws {{TrainException}} when the email ID does not exist.
+*Pre-conditions:*
+
+* The table exists but does not contain the provided email ID.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.ADMIN}}.
+# Call {{getUserByEmailId}} with an invalid email ID.
+*Expected Results:*
+
+* Throws {{TrainException}} with {{ResponseCode.NO_CONTENT}}.
+*Actual Results:*
+* Exception was thrown with {{ResponseCode.NO_CONTENT}} as expected.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0007j:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:10 PM
+getUserByEmailId,TMS-1,10033,Test,To Do,TMS,Train Management System,software,Muhammad Awais Rafique,641d55591273131f2ae2a78f,,High,,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,Muhammad Awais Rafique,641d55591273131f2ae2a78f,10/Dec/24 11:02 PM,10/Dec/24 11:09 PM,10/Dec/24 11:05 PM,,,0,"*Objective:* Verify that the {{getUserByEmailId}} method retrieves a user when a valid email ID exists.
+*Pre-conditions:*
+
+* The table for {{UserRole}} contains a valid email ID.
+*Steps to Execute:*
+
+# Instantiate {{UserServiceImpl}} with {{UserRole.CUSTOMER}}.
+# Call {{getUserByEmailId}} with a valid email ID.
+*Expected Results:*
+
+* Returns a {{UserBean}} object with correct details.
+*Actual Results:*
+* The {{UserBean}} object with matching email and role was successfully retrieved.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0|i0007b:,,,,,,,,,,,,,,,,To Do,10/Dec/24 11:02 PM
